@@ -1,0 +1,1 @@
+This is a rock, paper and scissors game that I made fot The Odin Project. It plays in the developer console.
