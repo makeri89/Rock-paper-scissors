@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function computerPlay() {
+            let rps = ['rock', 'paper', 'scissors'];
+            let rand = rps[Math.floor(Math.random() * rps.length)];
+            return rand;
+        }
+
+        function play(playerSelection, computerSelection) {
+            if (playerSelection == "rock" && computerSelection == "paper") {
+                return "You lose! Paper beats rock";
+            } else if (playerSelection == "rock" && computerSelection == "scissors") {
+                return "You win! Rock beats scissors";
+            } else if (playerSelection == "rock" && computerSelection == "rock") {
+                return "Tie game! Play again";
+            } else if (playerSelection == "paper" && computerSelection == "rock") {
+                return "You win! Paper beats rock";
+            } else if (playerSelection == "paper" && computerSelection == "paper") {
+                return "Tie game! Play again.";
+            } else if (playerSelection == "paper" && computerSelection == "scissors") {
+                return "You lose! Scissors beats paper";
+            } else if (playerSelection == "scissors" && computerSelection == "rock") {
+                return "You lose! Rock beats scissors";
+            } else if (playerSelection == "scissors" && computerSelection == "paper") {
+                return "You win! Scissors beats paper";
+            } else if (playerSelection == "scissors" && computerSelection == "scissors") {
+                return "Tie game! Play again.";
+            } else {
+                return "Select r, p or s";
+            }
+        }
+
+        const playerSelection = prompt("Select R, P or S");
+        const computerSelection = computerPlay();
+        console.log(play(playerSelection, computerSelection));
+
+    </script>
+</body>
+</html>
