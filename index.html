@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <h1>Play 5 rounds of good old RPS in the developer console!</h1>
+
     <script>
         
         // Generate computer selection
@@ -47,7 +51,7 @@
             } else if (playerSelection == "scissors" && computerSelection == "scissors") {
                 return "tie";
             } else {
-                return "Select r, p or s";
+                return "Rock, paper or scissors?";
             }
         }
 
