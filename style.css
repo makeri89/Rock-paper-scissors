@@ -50,6 +50,11 @@ button:hover {
         justify-content: space-around;
         margin-top: 3vh;
         text-align: center;
+        font-size: small;
+    }
+
+    button {
+        max-width: 30vw;
     }
 
     h1 {
