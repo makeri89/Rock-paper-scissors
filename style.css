@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
     color: #05386b
+    -webkit-appearance: none;
 }
 
 h1 {
