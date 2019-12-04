@@ -9,22 +9,63 @@
 </head>
 <body>
 
-    <h1>Play 5 rounds of good old RPS in the developer console!</h1>
+    <h1>Rock paper or scissors?<br>Beat the computer by reaching 5 wins first!</h1>
+    <div class="buttons">
+        <button class="btn" id="rock">ROCK</button>
+        <button class="btn" id="paper">PAPER</button>
+        <button class="btn" id="scissors">SCISSORS</button>
+    </div>
+    <div  class="results">
+        <div class="resultdisplayer" id="playerscoredisplay"></div>
+        <div class="resultdisplayer" id="computerscoredisplay"></div>
+        <div class="resultdisplayer" id="winnerdisplay"></div>
+    </div>
 
     <script>
-        
-        // Generate computer selection
+        // Variables to store score during 5 rounds
+        let playerScore = 0;
+        let computerScore = 0;
+
+        const btn = document.querySelectorAll("button");
+        const rock = document.querySelector("#rock");
+        const paper = document.querySelector("#paper");
+        const scissors = document.querySelector("#scissors");
+        const resDisp = document.querySelector(".results");
+        const playerScoreDisp = document.querySelector("#playerscoredisplay");
+        const compScoreDisp = document.querySelector("#computerscoredisplay");
+        const winDisp = document.querySelector("#winnerdisplay");
+
+        btn.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                let playerSelection = "";
+                playerSelection = e.target.id;
+                const computerSelection = computerPlay();
+                const roundWinner = play(playerSelection, computerSelection);
+                console.log(roundWinner);
+
+                playerScoreDisp.textContent = "You have " + playerScore + " points.";
+                compScoreDisp.textContent = "The computer has " + computerScore + " points.";
+
+                if (playerScore == 5 || computerScore == 5) {
+                    let winner = declareWinner(playerScore, computerScore);
+                    winDisp.textContent = winner;
+
+                    playerScoreDisp.remove();
+                    compScoreDisp.remove();
+
+                    btn.forEach((item) => {
+                        item.disabled = true;
+                    });
+                }
+            });
+        });
+
         function computerPlay() {
             let rps = ['rock', 'paper', 'scissors'];
             let rand = rps[Math.floor(Math.random() * rps.length)];
             return rand;
         }
 
-        // Variables to store score during 5 rounds
-        let playerScore = 0;
-        let computerScore = 0;
-
-        // Plays one round of RPS
         function play(playerSelection, computerSelection) {
             if (playerSelection == "rock" && computerSelection == "paper") {
                 computerScore++;
@@ -55,30 +96,13 @@
             }
         }
 
-        // Plays 5 rounds of RPS
-        function game() {
-            for (i = 0; i < 5; i++) {
-                const playerSelection = prompt("Select R, P or S").toLowerCase();
-                const computerSelection = computerPlay();
-                play(playerSelection, computerSelection);
-                console.log("You have " +  playerScore + " points and the computer has " + computerScore + " points");
-            }
-        }
-
-        game();
-
-        // Declares the winner in developer console
-        function declareWinner() {
+        function declareWinner(playerScore, computerScore) {
             if (playerScore > computerScore) {
-                console.log("You won!")
-            } else if (computerScore > playerScore){
-                console.log("You lost!")
+                return "You have beaten the computer " + playerScore + " - " + computerScore + "!";
             } else {
-                console.log("Tie game")
+                return "The computer has beaten you " + computerScore + " - " + playerScore + "!"; 
             }
         }
-
-        declareWinner();
 
     </script>
 </body>

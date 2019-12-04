@@ -1,5 +1,6 @@
 body {
     background-color: blanchedalmond;
+    margin: 0;
 }
 
 h1 {
@@ -7,4 +8,26 @@ h1 {
     justify-content: center;
     color: green;
     text-align: center;
+}
+
+button {
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+}
+
+.resultdisplayer {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    max-height: 130px;
+    max-width: 130px;
+    z-index: -1;
 }
