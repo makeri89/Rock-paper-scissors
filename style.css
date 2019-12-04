@@ -1,19 +1,32 @@
 body {
-    background-color: blanchedalmond;
     margin: 0;
+    font-family: 'Raleway', sans-serif;
+    color: #05386b
 }
 
 h1 {
     display: flex;
     justify-content: center;
-    color: green;
+    color: #05386b;
     text-align: center;
+    text-transform: uppercase;
+    margin-top: 10vh;
 }
 
 button {
     height: 150px;
     width: 150px;
     margin: 10px;
+    border: none;
+    box-shadow: 0 0 10px #05386b;
+    font-size: x-large;
+    color: #05386b;
+}
+
+button:hover {
+    background-color: #05386b;
+    border-radius: 5px;
+    color: white;
 }
 
 .resultdisplayer {
@@ -24,10 +37,16 @@ button {
 .buttons {
     display: flex;
     justify-content: center;
+    margin-top: 15vh;
+    margin-bottom: 10vh;
 }
 
 img {
     max-height: 130px;
     max-width: 130px;
     z-index: -1;
+}
+
+.results {
+    font-size: x-large;
 }
