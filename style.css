@@ -70,4 +70,5 @@ img {
 
 .results {
     font-size: x-large;
+    max-width: 80%;
 }
